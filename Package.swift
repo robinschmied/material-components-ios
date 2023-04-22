@@ -25,8 +25,8 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/Lilfaen/material-internationalization-ios", .branch("develop")),
-        .package(url: "https://github.com/material-foundation/material-text-accessibility-ios", .upToNextMajor(from: "2.0.1")),
+        .package(url: "https://github.com/Lilfaen/material-internationalization-ios", branch: "develop"),
+        .package(url: "https://github.com/Lilfaen/material-text-accessibility-ios", branch: "develop"),
     ],
     targets: [
         // MARK: Components
