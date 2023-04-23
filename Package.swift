@@ -52,7 +52,7 @@ let package = Package(
                 
             ],
             path: "components/TextControls/src/OutlinedTextFields",
-            sources: ["", "private"],
+//            sources: ["", "private"],
             publicHeadersPath: ""
         ),
         .target(
@@ -62,7 +62,7 @@ let package = Package(
                 .target(name: "MaterialComponents/schemes/Container"),
             ],
             path: "components/TextControls/src/OutlinedTextFieldsTheming",
-            sources: ["", "private"],
+//            sources: ["", "private"],
             publicHeadersPath: ""
         ),
         
@@ -73,7 +73,7 @@ let package = Package(
             dependencies: [
             ],
             path: "components/AnimationTiming/src",
-            sources: ["", "private"],
+//            sources: ["", "private"],
             publicHeadersPath: ""
         ),
         .target(
@@ -138,7 +138,7 @@ let package = Package(
                 .target(name: "MaterialComponents/private/TextControlsPrivate+TextFields"),
             ],
             path: "components/TextControls/src/BaseTextFields",
-            sources: ["", "private"],
+//            sources: ["", "private"],
             publicHeadersPath: ""
         ),
         .target(
@@ -261,7 +261,7 @@ let package = Package(
             dependencies: [
             ],
             path: "components/schemes/Typography/src/BasicFontScheme",
-            sources: ["", "private"],
+//            sources: ["", "private"],
             publicHeadersPath: ""
         ),
         .target(
@@ -269,7 +269,7 @@ let package = Package(
             dependencies: [
             ],
             path: "components/schemes/Typography/src/Scheming",
-            sources: ["", "private"],
+//            sources: ["", "private"],
             publicHeadersPath: ""
         ),
         .target(
