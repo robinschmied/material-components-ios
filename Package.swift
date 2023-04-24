@@ -73,6 +73,7 @@ let package = Package(
         .target(
             name: "MaterialComponents/AnimationTiming",
             dependencies: [
+                .target(name: "MaterialComponents/MinimumOS"),
             ],
             path: "components/AnimationTiming/src",
 //            sources: ["", "private"],
