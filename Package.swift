@@ -35,6 +35,8 @@ let package = Package(
             name: "Tabs+TabBarView",
             dependencies: [
                 .target(name: "MaterialComponents/AnimationTiming"),
+                .target(name: "MaterialComponents/Badges"),
+                .target(name: "MaterialComponents/MinimumOS"),
                 .target(name: "MaterialComponents/Ripple"),
                 .target(name: "MaterialComponents/private/Math"),
                 .product(name: "MDFInternationalization", package: "material-internationalization-ios")
@@ -81,6 +83,21 @@ let package = Package(
             dependencies: [
             ],
             path: "components/Availability/src",
+            publicHeadersPath: ""
+        ),
+        .target(
+            name: "MaterialComponents/Badges",
+            dependencies: [
+                .target(name: "MaterialComponents/MinimumOS"),
+            ],
+            path: "components/Badges/src",
+            publicHeadersPath: ""
+        ),
+        .target(
+            name: "MaterialComponents/MinimumOS",
+            dependencies: [
+            ],
+            path: "components/MinimumOS/src",
             publicHeadersPath: ""
         ),
         .target(
