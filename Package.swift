@@ -11,11 +11,11 @@ let package = Package(
             targets: ["Tabs_TabBarView"]
         ),
         .library(
-            name: "TextControls+OutlinedTextFields",
+            name: "TextControls_OutlinedTextFields",
             targets: ["TextControls+OutlinedTextFields"]
         ),
         .library(
-            name: "TextControls+OutlinedTextFieldsTheming",
+            name: "TextControls_OutlinedTextFieldsTheming",
             targets: ["TextControls+OutlinedTextFieldsTheming"]
         ),
     ],
