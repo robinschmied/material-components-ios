@@ -12,14 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "MDCMinimumOS.h"  // IWYU pragma: keep
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-API_DEPRECATED_BEGIN("🤖👀 Use UIView's animation APIs instead."
-                     "This has go/material-ios-migrations#scriptable-potential 🤖👀.",
-                     ios(12, 12))
 
 @interface UIView (MDCTimingFunction)
 
@@ -41,5 +35,3 @@ API_DEPRECATED_BEGIN("🤖👀 Use UIView's animation APIs instead."
                            completion:(void (^__nullable)(BOOL finished))completion;
 
 @end
-
-API_DEPRECATED_END

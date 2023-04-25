@@ -12,4 +12,5 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import <MaterialComponents/MaterialTypographyScheme+BasicFontScheme.h>
+@import MaterialComponents_schemes_Typography_BasicFontScheme;
+//#import <MaterialComponents/MaterialTypographyScheme+BasicFontScheme.h>

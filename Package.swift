@@ -4,14 +4,11 @@ import PackageDescription
 
 let package = Package(
     name: "MaterialComponents",
-    platforms: [
-        .iOS(.v14),
-    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "Tabs+TabBarView",
-            targets: ["Tabs+TabBarView"]
+            name: "Tabs_TabBarView",
+            targets: ["Tabs_TabBarView"]
         ),
         .library(
             name: "TextControls+OutlinedTextFields",
@@ -32,18 +29,19 @@ let package = Package(
         // MARK: Components
         
         .target(
-            name: "Tabs+TabBarView",
+            name: "Tabs_TabBarView",
             dependencies: [
                 .target(name: "MaterialComponents/AnimationTiming"),
-                .target(name: "MaterialComponents/Badges"),
-                .target(name: "MaterialComponents/MinimumOS"),
+                .target(name: "MaterialComponents/Availability"),
                 .target(name: "MaterialComponents/Ripple"),
                 .target(name: "MaterialComponents/private/Math"),
                 .product(name: "MDFInternationalization", package: "material-internationalization-ios")
             ],
-            path: "components/Tabs/src/TabBarView",
-            sources: ["", "private"],
-            publicHeadersPath: ""
+            path: "components/Tabs",
+            sources: [
+                "src/TabBarView"
+            ],
+            publicHeadersPath: "src/TabBarView"
         ),
         .target(
             name: "TextControls+OutlinedTextFields",
@@ -51,11 +49,13 @@ let package = Package(
                 .target(name: "MaterialComponents/Availability"),
                 .target(name: "MaterialComponents/TextControls+BaseTextFields"),
                 .target(name: "MaterialComponents/private/TextControlsPrivate+OutlinedStyle"),
-                
+
             ],
-            path: "components/TextControls/src/OutlinedTextFields",
-//            sources: ["", "private"],
-            publicHeadersPath: ""
+            path: "components/TextControls",
+            sources: [
+                "src/OutlinedTextFields",
+            ],
+            publicHeadersPath: "src/OutlinedTextFields"
         ),
         .target(
             name: "TextControls+OutlinedTextFieldsTheming",
@@ -63,9 +63,11 @@ let package = Package(
                 .target(name: "TextControls+OutlinedTextFields"),
                 .target(name: "MaterialComponents/schemes/Container"),
             ],
-            path: "components/TextControls/src/OutlinedTextFieldsTheming",
-//            sources: ["", "private"],
-            publicHeadersPath: ""
+            path: "components/TextControls",
+            sources: [
+                "src/OutlinedTextFieldsTheming",
+            ],
+            publicHeadersPath: "src/OutlinedTextFieldsTheming"
         ),
         
         // MARK: MaterialComponents
@@ -73,34 +75,24 @@ let package = Package(
         .target(
             name: "MaterialComponents/AnimationTiming",
             dependencies: [
-                .target(name: "MaterialComponents/MinimumOS"),
             ],
-            path: "components/AnimationTiming/src",
-//            sources: ["", "private"],
-            publicHeadersPath: ""
+            path: "components/AnimationTiming",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/Availability",
             dependencies: [
             ],
-            path: "components/Availability/src",
-            publicHeadersPath: ""
-        ),
-        .target(
-            name: "MaterialComponents/Badges",
-            dependencies: [
-                .target(name: "MaterialComponents/MinimumOS"),
+            path: "components/AvailabilityCompatability",
+            sources: [
+                "src",
             ],
-            path: "components/Badges/src",
-            publicHeadersPath: ""
+            publicHeadersPath: "src"
         ),
-        .target(
-            name: "MaterialComponents/MinimumOS",
-            dependencies: [
-            ],
-            path: "components/MinimumOS/src",
-            publicHeadersPath: ""
-        ),
+
         .target(
             name: "MaterialComponents/Ripple",
             dependencies: [
@@ -110,24 +102,32 @@ let package = Package(
                 .target(name: "MaterialComponents/private/Math"),
                 
             ],
-            path: "components/Ripple/src",
-            sources: ["", "private"],
-            publicHeadersPath: ""
+            path: "components/Ripple",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/ShadowElevations",
             dependencies: [
             ],
-            path: "components/ShadowElevations/src",
-            publicHeadersPath: ""
+            path: "components/ShadowElevations",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/ShadowLayer",
             dependencies: [
                 .target(name: "MaterialComponents/ShadowElevations"),
             ],
-            path: "components/ShadowLayer/src",
-            publicHeadersPath: ""
+            path: "components/ShadowLayer",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/ShapeLibrary",
@@ -135,8 +135,11 @@ let package = Package(
                 .target(name: "MaterialComponents/Shapes"),
                 .target(name: "MaterialComponents/private/Math"),
             ],
-            path: "components/ShapeLibrary/src",
-            publicHeadersPath: ""
+            path: "components/ShapeLibrary",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/Shapes",
@@ -145,8 +148,11 @@ let package = Package(
                 .target(name: "MaterialComponents/private/Color"),
                 .target(name: "MaterialComponents/private/Math"),
             ],
-            path: "components/Shapes/src",
-            publicHeadersPath: ""
+            path: "components/Shapes",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/TextControls+BaseTextFields",
@@ -154,17 +160,23 @@ let package = Package(
                 .target(name: "MaterialComponents/private/TextControlsPrivate+Shared"),
                 .target(name: "MaterialComponents/private/TextControlsPrivate+BaseStyle"),
                 .target(name: "MaterialComponents/private/TextControlsPrivate+TextFields"),
+                .product(name: "MDFInternationalization", package: "material-internationalization-ios"),
             ],
-            path: "components/TextControls/src/BaseTextFields",
-//            sources: ["", "private"],
-            publicHeadersPath: ""
+            path: "components/TextControls",
+            sources: [
+                "src/BaseTextFields",
+            ],
+            publicHeadersPath: "src/BaseTextFields"
         ),
         .target(
             name: "MaterialComponents/TextControls+Enums",
             dependencies: [
             ],
-            path: "components/TextControls/src/Enums",
-            publicHeadersPath: ""
+            path: "components/TextControls",
+            sources: [
+                "src/Enums",
+            ],
+            publicHeadersPath: "src/Enums"
         ),
         .target(
             name: "MaterialComponents/Typography",
@@ -173,9 +185,11 @@ let package = Package(
                 .target(name: "MaterialComponents/private/Math"),
                 .product(name: "MDFTextAccessibility", package: "material-text-accessibility-ios"),
             ],
-            path: "components/Typography/src",
-            sources: ["", "private"],
-            publicHeadersPath: ""
+            path: "components/Typography",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         
         // MARK: MaterialComponents/private
@@ -184,23 +198,32 @@ let package = Package(
             name: "MaterialComponents/private/Application",
             dependencies: [
             ],
-            path: "components/private/Application/src",
-            publicHeadersPath: ""
+            path: "components/private/Application",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/private/Color",
             dependencies: [
                 .target(name: "MaterialComponents/Availability"),
             ],
-            path: "components/private/Color/src",
-            publicHeadersPath: ""
+            path: "components/private/Color",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/private/Math",
             dependencies: [
             ],
-            path: "components/private/Math/src",
-            publicHeadersPath: ""
+            path: "components/private/Math",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/private/TextControlsPrivate+Shared",
@@ -209,8 +232,11 @@ let package = Package(
                 .target(name: "MaterialComponents/AnimationTiming"),
                 .target(name: "MaterialComponents/private/Math"),
             ],
-            path: "components/private/TextControlsPrivate/src/Shared",
-            publicHeadersPath: ""
+            path: "components/private/TextControlsPrivate",
+            sources: [
+                "src/Shared",
+            ],
+            publicHeadersPath: "src/Shared"
         ),
         .target(
             name: "MaterialComponents/private/TextControlsPrivate+BaseStyle",
@@ -219,8 +245,11 @@ let package = Package(
                 .target(name: "MaterialComponents/AnimationTiming"),
                 .target(name: "MaterialComponents/private/Math"),
             ],
-            path: "components/private/TextControlsPrivate/src/BaseStyle",
-            publicHeadersPath: ""
+            path: "components/private/TextControlsPrivate",
+            sources: [
+                "src/BaseStyle",
+            ],
+            publicHeadersPath: "src/BaseStyle"
         ),
         .target(
             name: "MaterialComponents/private/TextControlsPrivate+TextFields",
@@ -228,8 +257,11 @@ let package = Package(
                 .target(name: "MaterialComponents/private/Math"),
                 .target(name: "MaterialComponents/private/TextControlsPrivate+Shared"),
             ],
-            path: "components/private/TextControlsPrivate/src/TextFields",
-            publicHeadersPath: ""
+            path: "components/private/TextControlsPrivate",
+            sources: [
+                "src/TextFields",
+            ],
+            publicHeadersPath: "src/TextFields"
         ),
         .target(
             name: "MaterialComponents/private/TextControlsPrivate+OutlinedStyle",
@@ -239,8 +271,11 @@ let package = Package(
                 .target(name: "MaterialComponents/private/Math"),
                 .target(name: "MaterialComponents/private/TextControlsPrivate+Shared"),
             ],
-            path: "components/private/TextControlsPrivate/src/OutlinedStyle",
-            publicHeadersPath: ""
+            path: "components/private/TextControlsPrivate",
+            sources: [
+                "src/OutlinedStyle",
+            ],
+            publicHeadersPath: "src/OutlinedStyle"
         ),
         
         // MARK: MaterialComponents/schemes
@@ -252,8 +287,11 @@ let package = Package(
                 .target(name: "MaterialComponents/schemes/Typography"),
                 .target(name: "MaterialComponents/schemes/Shape"),
             ],
-            path: "components/schemes/Container/src",
-            publicHeadersPath: ""
+            path: "components/schemes/Container",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/schemes/Color",
@@ -261,8 +299,11 @@ let package = Package(
                 .target(name: "MaterialComponents/Availability"),
                 .target(name: "MaterialComponents/private/Color"),
             ],
-            path: "components/schemes/Color/src",
-            publicHeadersPath: ""
+            path: "components/schemes/Color",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/schemes/Typography",
@@ -271,24 +312,35 @@ let package = Package(
                 .target(name: "MaterialComponents/schemes/Typography+BasicFontScheme"),
                 .target(name: "MaterialComponents/schemes/Typography+Scheming"),
             ],
-            path: "components/schemes/Typography/src",
-            publicHeadersPath: ""
+            path: "components/schemes/Typography",
+            exclude: [
+                "src/BasicFontScheme",
+                "src/SchemingCompatability"
+            ],
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
         .target(
             name: "MaterialComponents/schemes/Typography+BasicFontScheme",
             dependencies: [
             ],
-            path: "components/schemes/Typography/src/BasicFontScheme",
-//            sources: ["", "private"],
-            publicHeadersPath: ""
+            path: "components/schemes/Typography",
+            sources: [
+                "src/BasicFontScheme",
+            ],
+            publicHeadersPath: "src/BasicFontScheme"
         ),
         .target(
             name: "MaterialComponents/schemes/Typography+Scheming",
             dependencies: [
             ],
-            path: "components/schemes/Typography/src/Scheming",
-//            sources: ["", "private"],
-            publicHeadersPath: ""
+            path: "components/schemes/Typography",
+            sources: [
+                "src/SchemingCompatability",
+            ],
+            publicHeadersPath: "src/SchemingCompatability"
         ),
         .target(
             name: "MaterialComponents/schemes/Shape",
@@ -296,8 +348,13 @@ let package = Package(
                 .target(name: "MaterialComponents/ShapeLibrary"),
                 .target(name: "MaterialComponents/Shapes"),
             ],
-            path: "components/schemes/Shape/src",
-            publicHeadersPath: ""
+            path: "components/schemes/Shape",
+            sources: [
+                "src",
+            ],
+            publicHeadersPath: "src"
         ),
     ]
 )
+// .product(name: "MDFInternationalization", package: "material-internationalization-ios"),
+// .product(name: "MDFTextAccessibility", package: "material-text-accessibility-ios"),

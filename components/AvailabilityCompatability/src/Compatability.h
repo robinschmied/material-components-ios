@@ -1,0 +1,3 @@
+@interface Compatability
+
+@end
