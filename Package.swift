@@ -86,7 +86,7 @@ let package = Package(
             name: "MaterialComponents/Availability",
             dependencies: [
             ],
-            path: "components/AvailabilityCompatability",
+            path: "components/AvailabilityCompatibility",
             sources: [
                 "src",
             ],
@@ -315,7 +315,7 @@ let package = Package(
             path: "components/schemes/Typography",
             exclude: [
                 "src/BasicFontScheme",
-                "src/SchemingCompatability"
+                "src/SchemingCompatibility"
             ],
             sources: [
                 "src",
@@ -338,9 +338,9 @@ let package = Package(
             ],
             path: "components/schemes/Typography",
             sources: [
-                "src/SchemingCompatability",
+                "src/SchemingCompatibility",
             ],
-            publicHeadersPath: "src/SchemingCompatability"
+            publicHeadersPath: "src/SchemingCompatibility"
         ),
         .target(
             name: "MaterialComponents/schemes/Shape",

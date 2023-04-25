@@ -1,0 +1,3 @@
+@interface AvailabilityCompatibility
+
+@end
