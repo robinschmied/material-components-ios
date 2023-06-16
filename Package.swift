@@ -18,6 +18,10 @@ let package = Package(
             name: "TextControls_OutlinedTextFieldsTheming",
             targets: ["TextControls+OutlinedTextFieldsTheming"]
         ),
+		.library(
+			name: "TextControls_OutlinedTextAreas",
+			targets: ["TextControls+OutlinedTextAreas"]
+		)
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -69,6 +73,20 @@ let package = Package(
             ],
             publicHeadersPath: "src/OutlinedTextFieldsTheming"
         ),
+		.target(
+			name: "TextControls+OutlinedTextAreas",
+			dependencies: [
+				.target(name: "MaterialComponents/Availability"),
+				.target(name: "MaterialComponents/TextControls+BaseTextFields"),
+				.target(name: "MaterialComponents/private/TextControlsPrivate+OutlinedStyle"),
+
+			],
+			path: "components/TextControls",
+			sources: [
+				"src/OutlinedTextAreas",
+			],
+			publicHeadersPath: "src/OutlinedTextAreas"
+		),
         
         // MARK: MaterialComponents
         
