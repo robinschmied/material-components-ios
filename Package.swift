@@ -186,6 +186,20 @@ let package = Package(
             ],
             publicHeadersPath: "src/BaseTextFields"
         ),
+		.target(
+			name: "MaterialComponents/TextControls+BaseTextAreas",
+			dependencies: [
+				.target(name: "MaterialComponents/private/TextControlsPrivate+Shared"),
+				.target(name: "MaterialComponents/private/TextControlsPrivate+BaseStyle"),
+				.target(name: "MaterialComponents/private/TextControlsPrivate+TextAreas"),
+				.product(name: "MDFInternationalization", package: "material-internationalization-ios"),
+			],
+			path: "components/TextControls",
+			sources: [
+				"src/BaseTextAreas",
+			],
+			publicHeadersPath: "src/BaseTextAreas"
+		),
         .target(
             name: "MaterialComponents/TextControls+Enums",
             dependencies: [
@@ -281,6 +295,18 @@ let package = Package(
             ],
             publicHeadersPath: "src/TextFields"
         ),
+		.target(
+			name: "MaterialComponents/private/TextControlsPrivate+TextAreas",
+			dependencies: [
+				.target(name: "MaterialComponents/private/Math"),
+				.target(name: "MaterialComponents/private/TextControlsPrivate+Shared"),
+			],
+			path: "components/private/TextControlsPrivate",
+			sources: [
+				"src/TextAreas",
+			],
+			publicHeadersPath: "src/TextAreas"
+		),
         .target(
             name: "MaterialComponents/private/TextControlsPrivate+OutlinedStyle",
             dependencies: [
