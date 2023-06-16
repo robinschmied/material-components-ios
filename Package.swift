@@ -77,7 +77,7 @@ let package = Package(
 			name: "TextControls+OutlinedTextAreas",
 			dependencies: [
 				.target(name: "MaterialComponents/Availability"),
-				.target(name: "MaterialComponents/TextControls+BaseTextFields"),
+				.target(name: "MaterialComponents/TextControls+BaseTextAreas"),
 				.target(name: "MaterialComponents/private/TextControlsPrivate+OutlinedStyle"),
 
 			],
