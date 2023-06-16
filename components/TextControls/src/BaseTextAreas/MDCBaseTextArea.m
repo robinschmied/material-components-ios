@@ -614,14 +614,14 @@ static const CGFloat kMDCBaseTextAreaDefaultMaximumNumberOfVisibleLines = (CGFlo
 #pragma mark Internationalization
 
 - (BOOL)shouldLayoutForRTL {
-  if (self.semanticContentAttribute == UISemanticContentAttributeForceRightToLeft) {
-    return YES;
-  } else if (self.semanticContentAttribute == UISemanticContentAttributeForceLeftToRight) {
+//  if (self.semanticContentAttribute == UISemanticContentAttributeForceRightToLeft) {
+//    return YES;
+//  } else if (self.semanticContentAttribute == UISemanticContentAttributeForceLeftToRight) {
     return NO;
-  } else {
-    return self.mdf_effectiveUserInterfaceLayoutDirection ==
-           UIUserInterfaceLayoutDirectionRightToLeft;
-  }
+//  } else {
+//    return self.mdf_effectiveUserInterfaceLayoutDirection ==
+//           UIUserInterfaceLayoutDirectionRightToLeft;
+//  }
 }
 
 #pragma mark Coloring
