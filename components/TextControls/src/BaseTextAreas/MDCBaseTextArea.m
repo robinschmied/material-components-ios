@@ -15,7 +15,8 @@
 #import "MDCBaseTextArea.h"
 
 #import <CoreGraphics/CoreGraphics.h>
-#import <MDFInternationalization/MDFInternationalization.h>
+@import MDFInternationalization;
+//#import <MDFInternationalization/MDFInternationalization.h>
 #import <QuartzCore/QuartzCore.h>
 
 #import "private/MDCBaseTextAreaLayout.h"
