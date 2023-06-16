@@ -191,7 +191,7 @@ let package = Package(
 			dependencies: [
 				.target(name: "MaterialComponents/private/TextControlsPrivate+Shared"),
 				.target(name: "MaterialComponents/private/TextControlsPrivate+BaseStyle"),
-				.target(name: "MaterialComponents/private/TextControlsPrivate+TextAreas"),
+				.target(name: "MaterialComponents/private/TextControlsPrivate+TextFields"),
 				.product(name: "MDFInternationalization", package: "material-internationalization-ios"),
 			],
 			path: "components/TextControls",
@@ -295,18 +295,6 @@ let package = Package(
             ],
             publicHeadersPath: "src/TextFields"
         ),
-		.target(
-			name: "MaterialComponents/private/TextControlsPrivate+TextAreas",
-			dependencies: [
-				.target(name: "MaterialComponents/private/Math"),
-				.target(name: "MaterialComponents/private/TextControlsPrivate+Shared"),
-			],
-			path: "components/private/TextControlsPrivate",
-			sources: [
-				"src/TextAreas",
-			],
-			publicHeadersPath: "src/TextAreas"
-		),
         .target(
             name: "MaterialComponents/private/TextControlsPrivate+OutlinedStyle",
             dependencies: [
