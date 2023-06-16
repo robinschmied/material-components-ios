@@ -79,7 +79,7 @@ let package = Package(
 				.target(name: "MaterialComponents/Availability"),
 				.target(name: "MaterialComponents/TextControls+BaseTextAreas"),
 				.target(name: "MaterialComponents/private/TextControlsPrivate+OutlinedStyle"),
-
+				.product(name: "MDFInternationalization", package: "material-internationalization-ios")
 			],
 			path: "components/TextControls",
 			sources: [
